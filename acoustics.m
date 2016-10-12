@@ -2,7 +2,7 @@
 % preloaded constants for acoustics implementation.
 %-------------------------------------------------------------------------
 % Author: Jiaxin Zhong
-% Version control: https://github.com/jxzhong0704/m
+% Version control: https://github.com/jxzhong0704/m @ acoustics.m
 %=========================================================================
 
 

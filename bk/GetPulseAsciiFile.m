@@ -1,15 +1,15 @@
 function [dataout]=GetPulseAsciiFile(BKFilename)  
-% =========================================================================
+%==========================================================================
 %   - This function read the output ascii file of PULSE Labshop.
 %   - This function can also be used to read the output ascii file
 %   from "Bridge to Matlab" application of PULSE LabShop. If this is the
 %   case, you have to run the code called 'BKFiles.m' created by Pulse LabShop.
 %   - The output data is given in a cell array.
 %
-% -------------------------------------------------------------------------
+%--------------------------------------------------------------------------
 % Author: Jiaxin Zhong
-% Version control: https://github.com/jxzhong0704/bk/
-% =========================================================================
+% Version control: https://github.com/jxzhong0704/m @ /bk/GetPulseAsciiFile.m
+%==========================================================================
 
 warning('off','MATLAB:dispatcher:InexactMatch');
 

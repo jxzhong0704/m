@@ -1,5 +1,10 @@
 function [dataout] = TranslatePulseData(datain)
+%==========================================================================
 
+%--------------------------------------------------------------------------
+% Author: Jiaxin Zhong
+% Version control: https://github.com/jxzhong0704/m @ /bk/TranslatePulseData.m
+%==========================================================================
 
 
 acoustics;
