@@ -6,12 +6,18 @@ Readme
 Introduction
 ===============
 
-This repository is created for the backup of B&K relating files: MATLAB code, apparatus manual, software tricks and so on.
+This repository is created for the backup of B&K relating files.
 
-Menu tree
--------------
 
-``m/``
-~~~~~~~~~~
+Functions
+===============
 
-MATLAB code.
+GetPulseAsciiFile.m
+-------------------------------
+
+Get the data from PULSE file whose suffix is ``.pls``.
+
+TranslatePulseData.m
+----------------------------------
+
+Translate the data type of PULSE file.
