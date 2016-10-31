@@ -16,7 +16,7 @@ function [dataout] = TranslatePulseData(data_raw, data_type, data_unit)
 %==========================================================================
 
 
-acoustics; % https://github.com/jxzhong0704/m @ acoustics.m
+acoustics_constants; % https://github.com/jxzhong0704/m @ acoustics_constants.m
 
 dataout = data_raw;
 
