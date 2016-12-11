@@ -7,7 +7,7 @@
 %==========================================================================
 
 % preloaded scripts
-acoustics;
+acoustics_constants;
 
 
 % set figure properties
