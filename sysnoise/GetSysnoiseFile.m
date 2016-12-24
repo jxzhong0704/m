@@ -14,9 +14,8 @@ function [dataout] = GetSysnoiseFile(SysFilename)
 % Input data:
 %	- SysFilename: 	Filename of sysnoise file(direcotrial style)	
 % Output data:
-%	- dataout:		A [cnt_p x 2] cell, where cnt_p is the total number of 
-%						field points. dataout{cnt_p,1} means number of the 
-%						field point; dataout{cnt_p,2} is [cnt_f x 4] matrix
+%	- dataout:		A [cnt_p x 1] cell, where cnt_p is the total number of 
+%						field points. dataout{cnt_p} is [cnt_f x 4] matrix
 %						whose first column corresponding frequencies, and 2nd,
 %						3rd and 4th column represent pressure(real), pressure(imaginary),
 %						and SPL respectively.
@@ -90,8 +89,7 @@ for p = 1:cnt_p
 	for f = 1:cnt_f
 		buf = [buf;[data{f,1},data{f,2}(:,p).']];
 	end
-	dataout{p,1} = p;
-	dataout{p,2} = buf;
+	dataout{p,1} = buf;
 end
 		
 

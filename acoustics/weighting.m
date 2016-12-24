@@ -8,12 +8,23 @@ function [data_w] = weighting(f, spec, w_type)
 %	- f:		frequency
 %	- spec:		spectrum (like SPL, SWL and etc.)
 %	- w_type:	type of weighting (A, B, C, or D in char)
+%					while: -A, -B, -C, -D:	A/B/C/D weighing to linear
 % Output data:
 %	- data_w:	spectrum which is A(or B, C, D)-weighted
+%-------------------------------------------------------------------------
+% Example:
+%	[data_w] = weighting([100,200],[1,2],'-B');
+%	[data_w] = weighting(1000,5,'A');
 %-------------------------------------------------------------------------
 % Author: Jiaxin Zhong
 % Version control: https://github.com/jxzhong0704/m @ acoustics/weighting.m
 %=========================================================================
+
+w_sign = 1;
+if strcmp(w_type(1),'-')
+	w_sign = -1;
+	w_type = w_type(2);
+end
 
 switch w_type
 	case 'A'
@@ -31,4 +42,4 @@ switch w_type
 		W = 20*log10(R);
 end
 
-data_w = spec+W;
+data_w = spec+w_sign*W;

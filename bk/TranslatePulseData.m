@@ -5,9 +5,11 @@ function [dataout] = TranslatePulseData(data_raw, data_type, data_unit)
 % Translate data form from PULSE output 
 %-------------------------------------------------------------------------
 % Input data:
-%	- data_raw: 	raw data from the PULSE(generate by GetPulseAsciiFile.m)
-%	- data_type: 	function of the data, e.g.: Autospectrum, Frequency Response H1, and so on.
-%	- data_unit:	the deired unit, e.g.: dB, linear, dBA, dBB, dBC, dBD and so on.	
+%	- data_raw: 	raw data from the PULSE(generate by GetPulseAsciiFile.m).
+%                       Attention: this is in CELL type.
+%	- data_type: 	function of the data, e.g.(which correspond the name in PULSE): 
+%                       Autospectrum, Frequency Response H1, and so on.
+%	- data_unit:	the deired unit, e.g.: dB, linear, dBA, dBB, dBC, dBD and so on.
 %                       mag: magnitude
 % Output data:
 %	- dataout:		the data satisfied your requirement.
@@ -23,7 +25,7 @@ dataout = data_raw;
 
 switch data_type
     case 'Autospectrum'
-        if data_unit == 'linear'
+        if strcmp(data_unit,'linear')
             len_data = length(data_raw);
             for i = 1:len_data
                 data_tmp = data_raw{i}(:,3);
@@ -31,7 +33,7 @@ switch data_type
             end
         end
         data_unit_trunc = data_unit(1:2);
-        if data_unit_trunc == 'dB'
+        if strcmp(data_unit_trunc,'dB')
             len_data = length(data_raw);
             for i = 1:len_data
                 data_tmp = data_raw{i}(:,3);
@@ -50,7 +52,7 @@ switch data_type
         end
         
     case 'Frequency Response H1'
-        if data_unit == 'mag'
+        if strcmp(data_unit,'mag')
             for i = 1:length(data_raw)
                 data_tmp = data_raw{i};
                 data_mag = sqrt(data_tmp(:,3).^2+data_tmp(:,4).^2);
